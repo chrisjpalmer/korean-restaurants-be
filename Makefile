@@ -4,8 +4,9 @@ serve:
 
 build-docker:
 	docker build -t korean-restaurants-be .
-	
+
 serve-docker:
+	docker rm --force korean-restaurants-be
 	docker run --name korean-restaurants-be -it --network host korean-restaurants-be
 
 build-geojson:
@@ -13,6 +14,7 @@ build-geojson:
 	node ./scripts/clean-html-tags.js korean_restaurants.geojson
 
 database:
+	docker rm --force postgres
 	docker compose up -d postgres
 	echo 'sleeping for 5 seconds to give postgres time to come up.'
 	echo 'if this command fails, usually rerunning it works.'
