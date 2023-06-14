@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Korean Restaurants</name>
+	<gx:CascadingStyle kml:id="__managed_style_2C578E512929E340E2DC">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_13F609D6C929E340E2DC">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_05A8D4BCDA29E340E2DC">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_13F609D6C929E340E2DC</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2C578E512929E340E2DC</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0AB5A9DE0729E340700C">
+		<name>Tasty Kalbi Restaurant</name>
+		<description><![CDATA[<div>This place has really good kalbi. Its also just opposite Starbucks, so you can easily get a coffee afterwards.<br></div>]]></description>
+		<LookAt>
+			<longitude>126.9707696445653</longitude>
+			<latitude>37.22764578922863</latitude>
+			<altitude>43.81062927531677</altitude>
+			<heading>263.2590352851807</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>310.7937143078016</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>126.9711902547677,37.22769003295954,43.78437809373075</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0FFBCF77A329E341721F">
+		<name>Jjajangmyong Restaurant</name>
+		<description><![CDATA[<div>This restaurant has great Jjajangmyong (black bean noodles) and Tangsuyuk (fried pork).<br></div>]]></description>
+		<LookAt>
+			<longitude>126.9745390144545</longitude>
+			<latitude>37.22221528997465</latitude>
+			<altitude>45.91512186904217</altitude>
+			<heading>272.3432734278902</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>107.0068274537698</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>126.9745752913237,37.22214152223785,45.88607833072557</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07D0E113BB29E348F269">
+		<name>24 Hour Kongnamul KukBap</name>
+		<description><![CDATA[<div>This restaurant serves really good Bean sprouts soup with rice! A cheap and healthy option :)<br></div>]]></description>
+		<LookAt>
+			<longitude>127.0400435429806</longitude>
+			<latitude>37.27650413317407</latitude>
+			<altitude>46.51019613405845</altitude>
+			<heading>19.80183168096281</heading>
+			<tilt>0.738433078915439</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>679.2316479449073</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>127.0408286687906,37.27608552892982,44.72834191674812</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="070679DFC029E35171A4">
+		<name>The Little King&apos;s Kimbap</name>
+		<description><![CDATA[<div>Cute little Kimbap restaurant with a simple selection of tasty Kimbab rolls :)<br></div>]]></description>
+		<LookAt>
+			<longitude>127.0324610981972</longitude>
+			<latitude>37.28118722398804</latitude>
+			<altitude>50.4456108198223</altitude>
+			<heading>2.057861020061795</heading>
+			<tilt>0.5566670173393748</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>239.7052357594657</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>127.0327110221075,37.28116934603574,51.00994050378893</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07D61C7AC429E354684B">
+		<name>The Attic Pub</name>
+		<description><![CDATA[<div>"The Attic" (<span class="Fc1rA">다락방) serves many Korean pub food favorites and has a 1980's style interior. Good food and good vibes.</span><br></div><div><br></div><div><br></div>]]></description>
+		<LookAt>
+			<longitude>127.0325673832273</longitude>
+			<latitude>37.28058709305748</latitude>
+			<altitude>49.4572189563192</altitude>
+			<heading>1.556207132044599</heading>
+			<tilt>0.5522050449941789</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>453.0413630825205</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>127.0329632998478,37.28081007571132,51.72726475968541</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00127A3F8729E359A901">
+		<name>Beer King Pub</name>
+		<description><![CDATA[<div>This franchise restaurant offers nice korean pub food. There is a good range of different menu items, and the taste is great. Fun fact: the owner of the restaurant used to run a cafe here, but ended up turning into a pub because it was more profitable!! This was probably the case because of the mass of uni students that pass by this spot every day.<br></div>]]></description>
+		<LookAt>
+			<longitude>126.9745655229102</longitude>
+			<latitude>37.22260698690719</latitude>
+			<altitude>44.27684886075312</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>180.703319014865</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>126.9747364367602,37.22265010668237,43.97082937402935</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AA40B408329E35FC5F6">
+		<name>Ttdokkpoki House</name>
+		<description><![CDATA[<div>A cute little restaurant serving popular snack Ttdokkpoki (rice cake puffs) with a spicy sauce.<br></div>]]></description>
+		<LookAt>
+			<longitude>126.9775748193956</longitude>
+			<latitude>37.22447838460108</latitude>
+			<altitude>35.40631253645851</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>201.7854316165177</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05A8D4BCDA29E340E2DC</styleUrl>
+		<Point>
+			<coordinates>126.9775201550173,37.22450239990378,35.55338264945428</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

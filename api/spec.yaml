@@ -1,0 +1,94 @@
+openapi: 3.0.3
+info:
+  title: Korean Restaurants
+  description: |-
+   This is a simple service that serves you up your favourite korean restaurants!
+   
+   I'm in Korea for 12 months, and I want a way to catalogue and search for my favourite restaurants whereever I am.
+  contact:
+    email: chrisjpalmer6@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+servers:
+  - url: https://localhost:3001/
+tags:
+  - name: restaurant
+    description: Information on korean restaurants
+paths:
+  /restaurant:
+    get:
+      tags:
+        - restaurant
+      summary: Get the list of nearby korean restaurants 
+      description: |
+        Get a list of korean restaurants near a point and within
+        a certain range
+      operationId: findRestaurants
+      parameters:
+        - name: nearby
+          in: query
+          required: true
+          description: |
+            the coordinates of the point to search around for restaurants.
+            formated as `lon,lat`
+          schema:
+            type: string
+        - name: within_meters
+          in: query
+          required: true
+          description: |
+            the distance around the `nearby` point in meters to search for restaurants
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindRestaurantsResponse'      
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    FindRestaurantsResponse:
+      type: object
+      properties:
+        restaurants:
+          $ref: '#/components/schemas/Restaurant'
+        
+    Restaurant:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/Coordinates'
+    Coordinates:
+      type: object
+      properties:
+        lat:
+          type: number
+        lon:
+          type: number
+        
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+    

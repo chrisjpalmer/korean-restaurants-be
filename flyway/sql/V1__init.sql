@@ -1,0 +1,2 @@
+-- didn't end up using this
+-- but this is how I do postgres migrations

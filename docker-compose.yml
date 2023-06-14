@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgis/postgis
+    container_name: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=korean_restaurants
+    volumes:
+      - ./database_init:/docker-entrypoint-initdb.d
+    network_mode: host
+    expose:
+      - 5432
+

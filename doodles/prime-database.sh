@@ -1,0 +1,1 @@
+psql -H localhost -d korean_restaurants -U postgres -c "CREATE EXTENSION postgis;"
