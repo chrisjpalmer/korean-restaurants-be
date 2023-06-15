@@ -7,11 +7,22 @@ build-docker:
 
 serve-docker:
 	docker rm --force korean-restaurants-be
-	docker run --name korean-restaurants-be -it --network host korean-restaurants-be
+	docker run \
+		--name korean-restaurants-be \
+		-it \
+		--network host \
+		korean-restaurants-be
 
 build-geojson:
-	ogr2ogr korean_restaurants.geojson korean_restaurants.kml
-	node ./scripts/clean-html-tags.js korean_restaurants.geojson
+	docker run \
+		--rm \
+		--network host \
+		-v $$PWD/geosource:/geosource/ \
+		ghcr.io/osgeo/gdal:alpine-normal-latest \
+		ogr2ogr \
+		/geosource/korean_restaurants.geojson \
+		/geosource/korean_restaurants.kml
+	node ./scripts/clean-html-tags.js ./geosource/korean_restaurants.geojson
 
 database:
 	docker rm --force postgres
@@ -23,11 +34,25 @@ database:
 	make load-restaurants
 
 migrate-database:
-	docker run --network host  -v $$PWD/flyway/sql:/flyway/sql --rm flyway/flyway -url=jdbc:postgresql://localhost:5432/korean_restaurants -user=postgres info
+	docker run \
+		--rm \
+		--network host \
+		 -v $$PWD/flyway/sql:/flyway/sql \
+		 flyway/flyway \
+		 -url=jdbc:postgresql://localhost:5432/korean_restaurants \
+		 -user=postgres info
 
 load-restaurants:
 	# https://gdal.org/drivers/vector/pg.html
-	ogr2ogr -f PostgreSQL PG:"dbname='korean_restaurants' host='localhost' port='5432' user='postgres' password='password'" korean_restaurants.geojson -lco GEOM_TYPE=geography -nln korean_restaurants
+	docker run \
+		--rm \
+		--network host \
+		-v $$PWD/geosource:/geosource \
+		ghcr.io/osgeo/gdal:alpine-normal-latest \
+		ogr2ogr -f PostgreSQL PG:"dbname='korean_restaurants' host='localhost' port='5432' user='postgres' password='password'" \
+		/geosource/korean_restaurants.geojson \
+		-lco GEOM_TYPE=geography \
+		-nln korean_restaurants
 
 connect-database:
 	PGPASSWORD=password psql -h localhost -U postgres -d korean_restaurants
