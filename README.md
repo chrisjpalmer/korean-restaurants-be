@@ -7,10 +7,17 @@ Provides the capability to search for the nearest restaurant.
 The API for the B/E service can be found [here](./api/spec.yaml)
 
 ## Getting Started
+### Requirements
 
 - Docker
+- Port 3001 free on your computer
 
-### Requirements
+### Running it
+
+```sh
+git clone https://github.com/chrisjpalmer/korean-restaurants-be
+cd korean-restaurants-be
+```
 
 If you are a Makefile person:
 
