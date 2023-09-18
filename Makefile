@@ -1,5 +1,6 @@
 
 serve:
+	RDS_CONN_STRING=postgres://postgres:postgres@localhost:5432/korean_restaurants \
 	go run ./cmd/serve
 
 build-docker:
@@ -8,6 +9,7 @@ build-docker:
 serve-docker:
 	docker rm --force korean-restaurants-be
 	docker run \
+		--env RDS_CONN_STRING=postgres://postgres:postgres@localhost:5432/korean_restaurants \
 		--name korean-restaurants-be \
 		-it \
 		--network host \

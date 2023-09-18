@@ -11,7 +11,10 @@ import (
 )
 
 func main() {
-	const connString = "postgres://postgres:postgres@localhost:5432/korean_restaurants"
+	connString := os.Getenv("RDS_CONN_STRING")
+	if connString == "" {
+		log.Fatal("RDS_CONN_STRING env var was empty")
+	}
 	const port = "3001"
 
 	// Init the database
