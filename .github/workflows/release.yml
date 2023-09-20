@@ -71,7 +71,7 @@ jobs:
           go install github.com/hairyhenderson/gomplate/v4/cmd/gomplate@latest
 
       - name: Substitute Tokens in Control Plane YAML Files
-        shell: bash
+        # shell: bash
         working-directory: ./cpln
         env:
           IMAGE_TAG: ${{needs.build.outputs.IMAGE_TAG}}
