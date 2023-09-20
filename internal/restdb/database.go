@@ -32,7 +32,7 @@ func (d *Database) FindRestaurants(ctx context.Context, center restaurant.Coordi
 	// query database
 	// NOTE: qry is sql injection safe
 	qry := findRestaurantsQuery(center)
-	rows, err := d.pool.Query(ctx, qry)
+	rows, err := d.pool.Query(ctx, qry, radiusMeters)
 	if err != nil {
 		return nil, err
 	}
