@@ -57,9 +57,11 @@ func (s *Server) FindRestaurants(r http.ResponseWriter, rq *http.Request) {
 	}
 
 	// response
+	log.Printf("server: found %d restaurants", len(rr))
 	rs := FindRestaurantsResponse{
 		Restaurants: mapRestaurants(rr),
 	}
+	log.Printf("server: mapped %d restaurants", len(rs.Restaurants))
 	successStatus(r, rs)
 }
 

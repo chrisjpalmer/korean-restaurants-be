@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
+	"log"
 
 	"github.com/chrisjpalmer/korean-restaurants-be/internal/restaurant"
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -50,6 +51,8 @@ func (d *Database) FindRestaurants(ctx context.Context, center restaurant.Coordi
 		}
 		rr = append(rr, r)
 	}
+
+	log.Printf("found %d restaurants", len(rr))
 
 	if rows.Err() != nil {
 		return nil, err
