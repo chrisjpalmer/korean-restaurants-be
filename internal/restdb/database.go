@@ -37,6 +37,7 @@ func (d *Database) FindRestaurants(ctx context.Context, center restaurant.Coordi
 	if err != nil {
 		return nil, err
 	}
+	log.Printf("querying %s with radiusMeters: %d", qry, radiusMeters)
 
 	// map results
 	rr := make([]restaurant.Restaurant, 0)
