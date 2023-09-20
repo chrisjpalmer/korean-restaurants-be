@@ -71,21 +71,19 @@ jobs:
           go install github.com/hairyhenderson/gomplate/v4/cmd/gomplate@latest
 
       - name: Substitute Tokens in Control Plane YAML Files
-        # shell: bash
-        working-directory: ./cpln
+        shell: bash
         env:
           IMAGE_TAG: ${{needs.build.outputs.IMAGE_TAG}}
           RDS_CONN_STRING: ${{secrets.RDS_CONN_STRING}}
         run: |
-          cat workload.yaml | gomplate > workload.yaml
+          gomplate -f cpln/workload.yaml > cpln/workload.yaml
 
       - name: Run CPLN Apply 
         shell: bash
-        working-directory: ./cpln
         env: 
           CPLN_ORG: ${{secrets.CPLN_ORG}}
           CPLN_GVC: ${{secrets.CPLN_GVC_NAME}}
           CPLN_WORKLOAD: ${{secrets.CPLN_WORKLOAD_NAME}}
           CPLN_TOKEN: ${{secrets.CPLN_TOKEN}}
         run: |
-          cpln apply -f cpln-workload.yaml --gvc ${CPLN_GVC}
+          cpln apply -f cpln/workload.yaml --gvc ${CPLN_GVC}
