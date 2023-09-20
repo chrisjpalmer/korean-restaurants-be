@@ -78,7 +78,7 @@ jobs:
           IMAGE_TAG: ${{needs.build.outputs.IMAGE_TAG}}
           RDS_CONN_STRING: ${{secrets.RDS_CONN_STRING}}
         run: |
-          gomplate -f cpln/workload.yaml > cpln/workload.yaml
+          gomplate -f cpln/workload.yml > cpln/workload.yml
 
       - name: Run CPLN Apply 
         shell: bash
