@@ -33,11 +33,10 @@ func (d *Database) FindRestaurants(ctx context.Context, center restaurant.Coordi
 	// query database
 	// NOTE: qry is sql injection safe
 	qry := findRestaurantsQuery(center)
-	rows, err := d.pool.Query(ctx, qry, radiusMeters)
+	rows, err := d.pool.Query(ctx, qry)
 	if err != nil {
 		return nil, err
 	}
-	log.Printf("querying %s with radiusMeters: %d", qry, radiusMeters)
 
 	// map results
 	rr := make([]restaurant.Restaurant, 0)
@@ -53,10 +52,8 @@ func (d *Database) FindRestaurants(ctx context.Context, center restaurant.Coordi
 		rr = append(rr, r)
 	}
 
-	log.Printf("found %d restaurants", len(rr))
-
 	if rows.Err() != nil {
-		return nil, err
+		return nil, rows.Err()
 	}
 
 	return rr, nil
