@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
-	"log"
 
 	"github.com/chrisjpalmer/korean-restaurants-be/internal/restaurant"
 	"github.com/jackc/pgx/v5/pgxpool"
