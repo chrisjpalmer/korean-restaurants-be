@@ -13,6 +13,7 @@ info:
   version: 1.0.11
 servers:
   - url: http://localhost:3001/
+  - url: https://korean-restaurants-be-x1ncq0w8e0jnm.cpln.app/
 tags:
   - name: restaurant
     description: Information on korean restaurants
