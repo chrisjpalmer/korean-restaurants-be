@@ -1,14 +1,14 @@
 kind: workload
-name: korean-restaurants-be
-description: korean-restaurants-be
+name: korean-restaurants-bev2
+description: korean-restaurants-bev2
 spec:
-  type: serverless
+  type: standard
   containers:
-    - name: korean-restaurants-be
+    - name: korean-restaurants-bev2
       cpu: 50m
       env:
-        - name: RDS_CONN_STRING
-          value: '{{ .Env.RDS_CONN_STRING }}'
+        - name: DB_CONN_STRING
+          value: '{{ .Env.DB_CONN_STRING }}'
       image: '{{ .Env.IMAGE_TAG }}'
       inheritEnv: false
       memory: 128Mi
@@ -19,14 +19,14 @@ spec:
     autoscaling:
       maxConcurrency: 1000
       maxScale: 3
-      metric: concurrency
+      metric: disabled
       minScale: 1
       scaleToZeroDelay: 300
       target: 100
-    capacityAI: true
+    capacityAI: false
     debug: false
     suspend: false
-    timeoutSeconds: 5
+    timeoutSeconds: 15
   firewallConfig:
     external:
       inboundAllowCIDR:

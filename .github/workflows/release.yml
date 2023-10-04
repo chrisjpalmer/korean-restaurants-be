@@ -98,7 +98,7 @@ jobs:
         shell: bash
         env:
           IMAGE_TAG: ${{needs.build.outputs.IMAGE_TAG}}
-          RDS_CONN_STRING: ${{secrets.RDS_CONN_STRING}}
+          DB_CONN_STRING: ${{secrets.DB_CONN_STRING}}
         run: |
           gomplate -f cpln/workload.yml > cpln/workload_rendered.yml
 

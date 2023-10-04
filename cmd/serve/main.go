@@ -11,9 +11,9 @@ import (
 )
 
 func main() {
-	connString := os.Getenv("RDS_CONN_STRING")
+	connString := os.Getenv("DB_CONN_STRING")
 	if connString == "" {
-		log.Fatal("RDS_CONN_STRING env var was empty")
+		log.Fatal("DB_CONN_STRING env var was empty")
 	}
 	const port = "3001"
 
