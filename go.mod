@@ -2,7 +2,7 @@ module github.com/chrisjpalmer/korean-restaurants-be
 
 go 1.20
 
-require github.com/jackc/pgx/v5 v5.4.3
+require github.com/jackc/pgx/v5 v5.5.0
 
 require (
 	github.com/jackc/pgpassfile v1.0.0 // indirect
